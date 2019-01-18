@@ -27,7 +27,7 @@ public class AddMessage extends AppCompatActivity {
     ConnectMySQL cn = new ConnectMySQL();
     private int code;
     private ProgressDialog progressDialog;
-    private String namemessage,message,result, url, IDCourse, IDTeacher;
+    private String namemessage,message,result, url, IDCourse, IDTeacher, sss;
     private EditText etnamemessage, etmessage;
     private  Button add,cancle;
     private long backPressedTime;
