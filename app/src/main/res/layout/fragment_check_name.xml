@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.skyeye.ClassIndependentGO.CheckNameFragment">
+
+
+    <ImageButton
+        android:id="@+id/bshowmapS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="107dp"
+        android:background="?android:attr/detailsElementBackground"
+        app:srcCompat="@drawable/bloggif_59009da81817e" />
+
+    <Button
+        android:id="@+id/btnShowdatacheckS"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bshowmapS"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:background="@drawable/rounded_edittext"
+        android:text="ข้อมูลการเช็คชื่อของนักศึกษา"
+        android:textSize="18sp" />
+</RelativeLayout>

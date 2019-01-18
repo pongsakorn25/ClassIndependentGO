@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ff3eaff9"
+    android:paddingLeft="16dp"
+    tools:context="com.example.skyeye.ClassIndependentGO.UpdateMessage">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView3"
+        android:layout_marginTop="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:background="#ffffffff"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/txtc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="แก้ไขข่าวสารประจำวิชา"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etUpdateNameMessage"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.13"
+                android:background="@drawable/rounded_edittext"
+                android:hint="เรื่อง"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/etUpdateMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_edittext"
+                android:gravity="top|left"
+                android:hint="รายละเอียด"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="4"
+                android:paddingLeft="10dp"
+                android:scrollbars="vertical"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/scrollView3"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btnCancleM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/button2"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toStartOf="@+id/txtc"
+                    android:layout_weight="0.42"
+                    android:background="#ff3eaff9"
+                    android:text="ยกเลิก"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btnUpdateMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.39"
+                    android:background="#ff3eaff9"
+                    android:text="แก้ไข"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+

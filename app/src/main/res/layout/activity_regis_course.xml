@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_regis_course"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="16dp"
+    android:weightSum="1"
+    tools:context="com.example.skyeye.ClassIndependentGO.RegisCourse">
+
+
+
+    <TextView
+        android:id="@+id/txtc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="สมัครลงเรียน"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/etcodecourse"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:background="@drawable/rounded_edittext"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/etNameC"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/etNameC"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/etidT"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:enabled="false"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="4"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:paddingLeft="10dp"
+        android:text="Name"
+        android:layout_weight="0.07" />
+
+    <!--<EditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:inputType="textPersonName"-->
+    <!--android:text="Name"-->
+    <!--android:ems="10"-->
+    <!--android:layout_below="@+id/editText5"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_marginTop="18dp"-->
+    <!--android:id="@+id/etIDT"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:enabled="false"/>-->
+
+    <EditText
+        android:id="@+id/etNameT"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:background="@drawable/rounded_edittext"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/etcodecourse"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.33"
+        android:background="@drawable/rounded_edittext"
+        android:enabled="false"
+        android:gravity="top|left"
+        android:imeOptions="actionDone"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="10"
+        android:minLines="4"
+        android:paddingLeft="10dp"
+        android:scrollbars="vertical"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/etScore"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:background="@drawable/rounded_edittext"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/etNameT"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <!--<EditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:inputType="textPersonName"-->
+    <!--android:text="Name"-->
+    <!--android:ems="10"-->
+    <!--android:id="@+id/etIDS"-->
+    <!--android:enabled="false"/>-->
+
+    <TextView
+        android:id="@+id/txtwait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:layout_marginTop="20dp"
+        android:text="***** รอการยืนยันการสมัครเรียนจากผู้สอน *****"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ff0000" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button2"
+            android:layout_marginEnd="15dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:background="#ff3eaff9"
+            android:textColor="#ffffff"
+            android:layout_toStartOf="@+id/txtc"
+            android:layout_weight="1.39"
+            android:text="ยกเลิก" />
+
+        <Button
+            android:id="@+id/btnRegisC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etScore"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/txtc"
+            android:layout_weight="1.40"
+            android:background="#ff3eaff9"
+            android:textColor="#ffffff"
+            android:text="ตกลง" />
+    </LinearLayout>
+
+</LinearLayout>

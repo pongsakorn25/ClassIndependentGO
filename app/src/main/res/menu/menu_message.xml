@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ManegerMassageFragment">
+
+    <item
+        android:id="@+id/action_refesh1"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@android:drawable/stat_notify_sync"
+        android:title="refesh"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_add"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/action_add"
+        android:title="add"
+        app:showAsAction="always" />
+
+</menu>

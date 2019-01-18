@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <com.mikepenz.iconics.view.IconicsImageView
+        android:id="@+id/iconstudent"
+        android:layout_width="75dp"
+        android:layout_height="44dp"
+        android:padding="10dp"
+        app:iiv_icon="ent_open_book" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:padding="5dp">
+
+
+        <!-- Rightend Arrow -->
+
+        <TextView
+            android:id="@+id/txtNamestudentCheck"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="NAMESTUDENT"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/txtIDcodeCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:text="IDCODESTUDENT"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow"
+            tools:ignore="ContentDescription" />
+
+        <!-- Rightend Arrow -->
+
+    </RelativeLayout>
+
+</LinearLayout>

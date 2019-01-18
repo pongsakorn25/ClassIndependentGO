@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnRandomNum"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="31dp"
+        android:background="@drawable/rounded_edittext"
+        android:text="สุ่มรหัสผ่าน"
+        tools:ignore="HardcodedText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/btncoordinates" />
+
+    <Button
+        android:id="@+id/btncoordinates"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginStart="19dp"
+        android:background="@drawable/rounded_edittext"
+        android:text="บันทึกตำแหน่ง"
+        android:layout_above="@+id/btnRandomNum"
+        android:layout_alignParentStart="true"
+        tools:ignore="HardcodedText" />
+
+
+    <TextView
+        android:id="@+id/txtRandomNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnRandomNum"
+        android:layout_alignBottom="@+id/btnRandomNum"
+        android:layout_toEndOf="@+id/btnRandomNum"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btncoordinates"
+        android:layout_alignStart="@+id/btncoordinates"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/rounded_edittext"
+        android:text="ปิดตำแหน่ง"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnOpen"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnClose"
+        android:layout_alignStart="@+id/btnClose"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/rounded_edittext"
+        android:text="เปิดตำแหน่ง"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

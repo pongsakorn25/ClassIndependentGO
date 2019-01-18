@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "643687453984",
+    "firebase_url": "https://classindependentgo-bee8d.firebaseio.com",
+    "project_id": "classindependentgo-bee8d",
+    "storage_bucket": "classindependentgo-bee8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643687453984:android:7862a64248a7ad31",
+        "android_client_info": {
+          "package_name": "com.example.skyeye.ClassIndependentGO"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643687453984-hh2msckon1m2k5egocedep6i2rv30rcb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.skyeye.ClassIndependentGO",
+            "certificate_hash": "dfa81880cca5ea15f27af899ce8840b71728621b"
+          }
+        },
+        {
+          "client_id": "643687453984-gg6rkeup1d6ne7n6qm0mv4m8uv6ir3ma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNeELQ6ZhG9I3lBHzjG5OvOjvs2p6p5zI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643687453984-gg6rkeup1d6ne7n6qm0mv4m8uv6ir3ma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

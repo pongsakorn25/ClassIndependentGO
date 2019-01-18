@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_background_selector"
+    android:padding="7dp">
+
+    <com.mikepenz.iconics.view.IconicsImageView
+        android:id="@+id/iconicsImageView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        app:iiv_icon="ent_open_book" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:id="@+id/txtCoursename"
+            android:fontFamily="serif"
+            android:textColor="#040404"
+            android:typeface="sans"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="TextView"
+                android:id="@+id/txtNameF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+
+            <TextView
+                android:text="TextView"
+                android:id="@+id/txtNameL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/txtNameF"
+                android:layout_marginStart="10dp" />
+
+            <!-- Rightend Arrow -->
+            <ImageView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+
+            <!-- Rightend Arrow -->
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/txtNamestudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="NAME"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtIDcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/txtNamestudent"
+            android:layout_marginTop="5dp"
+            android:text="IDCODE"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="14sp" />
+
+        <TableRow
+            android:id="@+id/tableRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <ImageButton
+                android:id="@+id/btnconfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_marginStart="100dp"
+                android:layout_toEndOf="@+id/txtIDcode"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:focusableInTouchMode="false"
+                app:srcCompat="@drawable/ic_confirm" />
+
+            <ImageButton
+                android:id="@+id/btndelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/tableRow"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:focusableInTouchMode="false"
+                app:srcCompat="@drawable/ic_noconfirm" />
+        </TableRow>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
