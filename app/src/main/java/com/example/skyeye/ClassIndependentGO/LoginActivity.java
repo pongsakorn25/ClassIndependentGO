@@ -44,12 +44,13 @@ public class LoginActivity extends AppCompatActivity {
         private static final String Login_REQUEST_URL = "https://classindependent.000webhostapp.com/Android/Login_Android.php";
         private Map<String, String> params;
 
-        public LoginRequest(String username, String password, String stutus, Response.Listener<String> listener) {
+        private LoginRequest(String username, String password, String stutus, Response.Listener<String> listener) {
             super(Request.Method.POST, Login_REQUEST_URL, listener, null);
             params = new HashMap<>();
             params.put("User", username);
             params.put("Password", password);
             params.put("Stutus", stutus);
+
         }
         @Override
         public Map<String, String> getParams() {
@@ -66,8 +67,8 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword2);
         SlideImage();
-        bLogin = (Button) findViewById(R.id.bLogin);
-        registerSlink = (Button) findViewById(R.id.bRegisterS);
+        bLogin =  findViewById(R.id.bLogin);
+        registerSlink =  findViewById(R.id.bRegisterS);
 //        registerTlink = (Button) findViewById(R.id.bRegisterT);
 
         registerSlink.setOnClickListener(new View.OnClickListener() {
@@ -179,21 +180,21 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void SlideImage() {
-        ImageView img_animation = (ImageView) findViewById(R.id.imgLogo);
-        TextView txthead = (TextView) findViewById(R.id.txthead);
+        ImageView img_animation =  findViewById(R.id.imgLogo);
+        TextView txthead =  findViewById(R.id.txthead);
         TranslateAnimation animation = new TranslateAnimation(0.0f, 0.0f, 430.0f, 0.0f);
         animation.setDuration(1000);
         animation.setStartOffset(3000);
         animation.setFillAfter(true);
-        img_animation.startAnimation(animation);;
+        img_animation.startAnimation(animation);
         txthead.startAnimation(animation);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
+                LinearLayout layout =  findViewById(R.id.linearLayout);
                 layout.setVisibility(View.VISIBLE);
 
-                Button button = (Button) findViewById(R.id.bRegisterS);
+                Button button = findViewById(R.id.bRegisterS);
                 button.setVisibility(View.VISIBLE);
             }
         }, 5000);
