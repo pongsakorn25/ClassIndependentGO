@@ -130,11 +130,11 @@ public class ShowAllCourseFragment extends Fragment implements SearchView.OnQuer
             }
 
             // Colname
-            TextView txtNameC = (TextView) convertView.findViewById(R.id.txtCoursename);
-            TextView txtNameF = (TextView) convertView.findViewById(R.id.txtNameF);
-            TextView txtNameL = (TextView) convertView.findViewById(R.id.txtNameL);
+            TextView txtNameC =  convertView.findViewById(R.id.txtCoursename);
+            TextView txtNameF =  convertView.findViewById(R.id.txtNameF);
+            TextView txtNameL = convertView.findViewById(R.id.txtNameL);
 
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.iconicsImageView);
+            ImageView imageView =  convertView.findViewById(R.id.iconicsImageView);
             imageView.setImageResource(R.drawable.regiscourse);
 
             txtNameC.setText(context.getString(R.string.namecourse) + " " + MyArr.get(position).get("Name_Coures").toString());
@@ -157,12 +157,17 @@ public class ShowAllCourseFragment extends Fragment implements SearchView.OnQuer
 //        Toast.makeText(getActivity(), Username, Toast.LENGTH_LONG).show();
 
 
-        showallcoure = (ListView) rootView.findViewById(R.id.showallcouse_listview);
+        showallcoure =  rootView.findViewById(R.id.showallcouse_listview);
         showallcoure.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 idcourse = MyArrList.get(position).get("Id_Course").toString();
+                namecourse = MyArrList.get(position).get("Name_Coures").toString();
+                Fnameteacher = MyArrList.get(position).get("FirstName").toString();
+                Lnameteacher = MyArrList.get(position).get("LastName").toString();
+
+//                Toast.makeText(getActivity(), idcourse + namecourse + Fnameteacher + Lnameteacher, Toast.LENGTH_SHORT).show();
 
                 GetCheckCourse();
             }
@@ -354,19 +359,21 @@ public class ShowAllCourseFragment extends Fragment implements SearchView.OnQuer
             Intent intent = new Intent(getActivity(),RegisCourse.class);
             intent.putExtra("User_S",Username);
 
-            txt_coursename = (TextView) getActivity().findViewById(txtCoursename);
-            txt_nameteacher = (TextView) getActivity().findViewById(txtNameF);
-            txt_Lnameteacher = (TextView) getActivity().findViewById(txtNameL);
+//            txt_coursename =  getActivity().findViewById(txtCoursename);
+//            txt_nameteacher =  getActivity().findViewById(txtNameF);
+//            txt_Lnameteacher =  getActivity().findViewById(txtNameL);
+//
+//            namecourse = txt_coursename.getText().toString();
+//            Fnameteacher = txt_nameteacher.getText().toString();
+//            Lnameteacher = txt_Lnameteacher.getText().toString();
+//
+//            String[] separated1 = Fnameteacher.split("ผู้สอน:");
+//            String[] separated2 = namecourse.split("วิชา:");
 
-            namecourse = txt_coursename.getText().toString();
-            Fnameteacher = txt_nameteacher.getText().toString();
-            Lnameteacher = txt_Lnameteacher.getText().toString();
+//            Toast.makeText(getActivity(), separated2[1] + separated1[1], Toast.LENGTH_LONG).show();
 
-            String[] separated1 = Fnameteacher.split("ผู้สอน:");
-            String[] separated2 = namecourse.split("วิชา:");
-
-            intent.putExtra("Name_Coures" , separated2[1].trim());
-            intent.putExtra("FirstName", separated1[1].trim());
+            intent.putExtra("Name_Coures" , namecourse);
+            intent.putExtra("FirstName", Fnameteacher);
             intent.putExtra("LastName",Lnameteacher );
 
             intent.putExtra("Id_Student",IDStu );

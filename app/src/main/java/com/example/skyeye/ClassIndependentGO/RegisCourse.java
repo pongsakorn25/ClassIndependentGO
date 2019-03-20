@@ -34,6 +34,7 @@ public class RegisCourse extends AppCompatActivity {
     int code;
     private TextView txtnameS;
     ArrayList<HashMap<String, Object>> MyArrList = new ArrayList<HashMap<String, java.lang.Object>>();
+//    private int activity_regis_course;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +57,12 @@ public class RegisCourse extends AppCompatActivity {
 
         IDStu = getIntent().getStringExtra("Id_Student");
 
-//        Toast.makeText(RegisCourse.this, IDStu, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, namec, Toast.LENGTH_SHORT).show();
 
         GetDataC();
+
+
+
 
         etnamec.setText(getString(R.string.namecourse) +" " + namec );
         etnamet.setText(getString(R.string.nameteacher)+" " + fnameteacher + "  " + lnameteacger);
