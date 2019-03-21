@@ -51,17 +51,17 @@ public class OpenCourseFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_open_course, container, false);
 
-        etcodecourse = (EditText) rootView.findViewById(R.id.etCodecourse);
-        etnamecourse = (EditText) rootView.findViewById(R.id.etNameCourse);
-        etdescription = (EditText) rootView.findViewById(R.id.etDescription);
-        etscore = (EditText) rootView.findViewById(R.id.etScore);
+        etcodecourse =  rootView.findViewById(R.id.etCodecourse);
+        etnamecourse =  rootView.findViewById(R.id.etNameCourse);
+        etdescription =  rootView.findViewById(R.id.etDescription);
+        etscore =  rootView.findViewById(R.id.etScore);
 
 
 
         IDteacher = getArguments().getString("Id_Teacher");
 //        Toast.makeText(getActivity(), IDteacher,Toast.LENGTH_LONG).show();
 
-        btnopencourse = (Button) rootView.findViewById(R.id.btnOpenC);
+        btnopencourse =  rootView.findViewById(R.id.btnOpenC);
         btnopencourse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +69,8 @@ public class OpenCourseFragment extends Fragment {
                 NameCourse = etnamecourse.getText().toString();
                 Description = etdescription.getText().toString();
                 Score = etscore.getText().toString();
+
+//                Toast.makeText(getActivity(), IDteacher + CodeCourse + NameCourse + Description + Score, Toast.LENGTH_LONG).show();
 
 
                 if(TextUtils.isEmpty(CodeCourse)) {

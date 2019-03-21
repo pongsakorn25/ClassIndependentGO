@@ -62,8 +62,6 @@ public class RegisCourse extends AppCompatActivity {
         GetDataC();
 
 
-
-
         etnamec.setText(getString(R.string.namecourse) +" " + namec );
         etnamet.setText(getString(R.string.nameteacher)+" " + fnameteacher + "  " + lnameteacger);
 

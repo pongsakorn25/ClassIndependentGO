@@ -33,6 +33,7 @@ public class RegisterSActivity extends AppCompatActivity {
     private RadioGroup rgGender;
     private RadioButton rMale, rFemale;
     private long backPressedTime;
+    ProgressDialog progressDialog;
     android.support.v7.app.ActionBar actionBar;
 
     public class RegisterRequest extends StringRequest {
@@ -40,18 +41,18 @@ public class RegisterSActivity extends AppCompatActivity {
         private Map<String, String> params;
 
 
-        public RegisterRequest(String username, String password, String idcode, String fname, String lname, String phone, String email,String gender, String status, Response.Listener<String> listener){
+        public RegisterRequest( String fname, String lname, String idcode, String email, String phone, String gender,String username, String password,  String status, Response.Listener<String> listener){
             super (Method.POST, REGISTER_REQUEST_URL, listener, null);
             params = new HashMap<>();//query string สำหรับใช้กับ MySql
-            params.put("User", username);
-            params.put("Password", password);
             params.put("FirtName_S", fname);
             params.put("LastName_S", lname);
-            params.put("Idcode", idcode);
-            params.put("Phone",  phone);
-            params.put("Email", email);
-            params.put("Gender", gender);
-            params.put("Status", status);
+            params.put("Idcode_S", idcode);
+            params.put("Email_S", email);
+            params.put("Phone_S",  phone);
+            params.put("Gender_S", gender);
+            params.put("User_S", username);
+            params.put("Password_S", password);
+            params.put("Status_S", status);
         }
 
         @Override
@@ -69,32 +70,33 @@ public class RegisterSActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
 
-        etUsername = (EditText) findViewById(R.id.etUsername);
-        etPassword1 = (EditText) findViewById(R.id.etPassword1);
-        etPassword2 = (EditText) findViewById(R.id.etPassword2);
-        etFname = (EditText) findViewById(R.id.etFname);
-        etLname = (EditText) findViewById(R.id.etLname);
-        etIdcode = (EditText) findViewById(R.id.etIdcode);
-        etPhone = (EditText) findViewById(R.id.etPhone);
-        etEmail = (EditText) findViewById(R.id.etEmail);
-        rgGender = (RadioGroup) findViewById(R.id.radioGrpGender);
-        rMale = (RadioButton) findViewById(R.id.radioMale);
-        rFemale = (RadioButton) findViewById(R.id.radioFemale);
-        bRegister = (Button) findViewById(R.id.bRegister);
+        etUsername =  findViewById(R.id.etUsername);
+        etPassword1 =  findViewById(R.id.etPassword1);
+        etPassword2 =  findViewById(R.id.etPassword2);
+        etFname =  findViewById(R.id.etFname);
+        etLname =  findViewById(R.id.etLname);
+        etIdcode =  findViewById(R.id.etIdcode);
+        etPhone =  findViewById(R.id.etPhone);
+        etEmail =  findViewById(R.id.etEmail);
+        rgGender =  findViewById(R.id.radioGrpGender);
+        rMale =  findViewById(R.id.radioMale);
+        rFemale =  findViewById(R.id.radioFemale);
+        bRegister =  findViewById(R.id.bRegister);
 
 
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Username = etUsername.getText().toString().trim();
-                Password1 = etPassword1.getText().toString().trim();
-                Password2 = etPassword2.getText().toString().trim();
                 Firstname = etFname.getText().toString().trim();
                 Lastname = etLname.getText().toString().trim();
                 Idcode = etIdcode.getText().toString().trim();
                 Email = etEmail.getText().toString().trim();
                 Phone = etPhone.getText().toString().trim();
+                Username = etUsername.getText().toString().trim();
+                Password1 = etPassword1.getText().toString().trim();
+                Password2 = etPassword2.getText().toString().trim();
+
                 isEmailValid(Email);
 
                 if(TextUtils.isEmpty(Username)) {
@@ -157,13 +159,16 @@ public class RegisterSActivity extends AppCompatActivity {
                     Gender = "หญิง";
                 }
 
+
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
-                        final ProgressDialog pd = new ProgressDialog(RegisterSActivity.this);
-                        pd.setMessage("กรุณารอสักครู่ ...");
-                        pd.show();
+                        progressDialog = new ProgressDialog(RegisterSActivity.this);
+                        progressDialog.setCancelable(false);
+                        progressDialog.setMessage("กรุณารอสักครู่ ...");
+                        progressDialog.show();
 
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
@@ -171,19 +176,19 @@ public class RegisterSActivity extends AppCompatActivity {
                             if (code == 1) {
                                 Toast.makeText(getBaseContext(), R.string.register,
                                         Toast.LENGTH_LONG).show();
-                                pd.dismiss();
+                                progressDialog.dismiss();
                                finish();
 
                             } else if (code == 2 || code == 4) {
                                 etUsername.setError(getString(R.string.regis1));
                                 etUsername.requestFocus();
-                                pd.dismiss();
+                                progressDialog.dismiss();
                                 return;
 
                             } else if (code == 3 || code == 5) {
                                 etEmail.setError(getString(R.string.regis2));
                                 etEmail.requestFocus();
-                                pd.dismiss();
+                                progressDialog.dismiss();
                                 return;
 
                             } else {
@@ -192,15 +197,15 @@ public class RegisterSActivity extends AppCompatActivity {
                                         .setNegativeButton("Retry", null)
                                         .create()
                                         .show();
-                                pd.dismiss();
+                                progressDialog.dismiss();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 };
-
-                RegisterRequest registerRequest = new RegisterRequest(Username, Password1, Idcode, Firstname, Lastname, Phone, Email, Gender, "S", responseListener);
+//                Toast.makeText(RegisterSActivity.this, Firstname + Lastname + Idcode + Email + Phone  + Gender + Username + Password1, Toast.LENGTH_LONG).show();
+                RegisterRequest registerRequest = new RegisterRequest(Firstname, Lastname, Idcode, Email, Phone, Gender, Username, Password1,"S", responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterSActivity.this);
                 queue.add(registerRequest);
             }
