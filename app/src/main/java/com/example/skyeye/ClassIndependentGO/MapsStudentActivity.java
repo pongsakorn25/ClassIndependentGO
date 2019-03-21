@@ -491,7 +491,7 @@ public class MapsStudentActivity extends AppCompatActivity implements OnMapReady
         if (code == 1) {
             Toast.makeText(MapsStudentActivity.this, "เช็คชื่อสำเร็จ", Toast.LENGTH_SHORT).show();
             finish();
-        } else {
+        } if(code == 2){
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.setTitle("เช็คชื่อไม่สำเร็จ");
             dialog.setIcon(R.drawable.ic_noconfirm);
@@ -504,6 +504,9 @@ public class MapsStudentActivity extends AppCompatActivity implements OnMapReady
                 }
             });
             dialog.show();
+        } else {
+            Toast.makeText(MapsStudentActivity.this, "เกิดข้อผิดพลาด", Toast.LENGTH_SHORT).show();
+
         }
     }
 
