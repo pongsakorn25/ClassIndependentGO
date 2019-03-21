@@ -419,10 +419,11 @@ public class MapsTeacherActivity extends AppCompatActivity implements OnMapReady
 
     public void ShowAllContent() {
         if (code == 1) {
-//            Toast.makeText(MapsTeacherActivity.this,getString(R.string.savecoordinates), Toast.LENGTH_SHORT).show();
+            Toast.makeText(MapsTeacherActivity.this,getString(R.string.savecoordinates), Toast.LENGTH_SHORT).show();
+        } if (code == 2){
             GetUpdatecoordinates();
         } else {
-            GetUpdatecoordinates();
+            Toast.makeText(MapsTeacherActivity.this,"บันทึกไม่สำเร็จ", Toast.LENGTH_SHORT).show();
         }
     }
 
