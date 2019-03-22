@@ -229,11 +229,15 @@ public class RegisCourse extends AppCompatActivity {
 //        codecourse = MyArrList.get(0).get("Code_Course").toString();
 //        score = MyArrList.get(0).get("Score").toString();
         }
+
+
     }
 
-
-
-
+    @Override
+    public void onStop() {
+        super.onStop();
+        progressDialog.dismiss(); // try this
+    }
 
 }
 

@@ -178,6 +178,12 @@ public class AddMessage extends AppCompatActivity {
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+        progressDialog.dismiss(); // try this
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:

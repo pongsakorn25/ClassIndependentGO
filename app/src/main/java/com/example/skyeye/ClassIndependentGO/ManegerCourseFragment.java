@@ -140,6 +140,12 @@ public class ManegerCourseFragment extends Fragment {
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+        progressDialog.dismiss(); // try this
+    }
+
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
         inflater.inflate(R.menu.menu_refresh, menu);

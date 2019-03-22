@@ -207,6 +207,7 @@ public class UpdateMessage extends AppCompatActivity {
                             }
                         });
 
+
                 alertDialog.setNegativeButton(getString(R.string.Cancle),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
@@ -215,6 +216,7 @@ public class UpdateMessage extends AppCompatActivity {
                         });
 
                 alertDialog.show();
+
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -298,6 +300,12 @@ public class UpdateMessage extends AppCompatActivity {
         else{
             Toast.makeText(this,"NOT DELETE", Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        progressDialog.dismiss(); // try this
     }
 
 
