@@ -178,9 +178,11 @@ public class AddMessage extends AppCompatActivity {
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-        progressDialog.dismiss(); // try this
+    public void onDestroy() {
+        super.onDestroy();
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.cancel();
+        }
     }
 
     @Override

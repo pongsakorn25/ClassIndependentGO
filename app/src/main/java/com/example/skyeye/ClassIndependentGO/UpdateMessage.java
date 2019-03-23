@@ -204,6 +204,7 @@ public class UpdateMessage extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 GetDelete();
                                 finish();
+
                             }
                         });
 
@@ -302,12 +303,18 @@ public class UpdateMessage extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        progressDialog.dismiss(); // try this
-    }
-
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        progressDialog.dismiss(); // try this
+//    }
+      @Override
+        public void onDestroy() {
+          super.onDestroy();
+          if (progressDialog != null && progressDialog.isShowing()) {
+              progressDialog.cancel();
+          }
+      }
 
 
 }
